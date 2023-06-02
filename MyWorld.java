@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * The World of my game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Jason Qian
+ * @version May 2023
  */
 public class MyWorld extends World
 {
@@ -17,5 +17,14 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+    }
+    
+    /**
+     * End the game and draw 'GameOver'
+     */
+    public void gameOver()
+    {
+        Label gameOverLabel = new Label("Game Over", 100);
+        addObject(gameOverLabel, 300, 200);
     }
 }
