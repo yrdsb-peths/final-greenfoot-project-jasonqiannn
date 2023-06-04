@@ -16,6 +16,9 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+
+        // Create the road
+        createRoad();
         
         // Create the car object
         Car car = new Car();
@@ -43,5 +46,13 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(getWidth());
         int y = 0;
         addObject(coin, x, y);
+    }
+
+    public void createRoad()
+    {
+        Road road = new Road();
+        int x = 300;
+        int y = 200;
+        addObject(road, x, y);
     }
 }
