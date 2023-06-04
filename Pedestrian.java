@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Pedestrian here.
+ * Pedestrian on the sidewalk.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Jason Qian
+ * @version June 2023
  */
 public class Pedestrian extends Actor
 {

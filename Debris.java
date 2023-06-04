@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Debris here.
+ * Debris we don't want to crash into.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Jason Qian
+ * @version June 2023
  */
 public class Debris extends Actor
 {
