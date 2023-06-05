@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Road extends Actor
 {
-    int speed = 1;
+    int speed = 2;
 
     /**
      * Act - do whatever the Road wants to do. This method is called whenever
@@ -19,9 +19,9 @@ public class Road extends Actor
         int x = getX();
         int y = getY() + speed;
         setLocation(x, y);
-        if (isAtEdge())
+        if (isTouching(Barrier.class))
         {
-            setLocation(300, 200);
+            setLocation(300, 0);
         }
     }
 

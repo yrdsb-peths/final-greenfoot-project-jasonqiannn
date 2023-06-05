@@ -12,7 +12,7 @@ public class Car extends Actor
      * Act - do whatever the Car wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    GreenfootSound elephantSound = new GreenfootSound("coinsound.mp3");
+    GreenfootSound coinSound = new GreenfootSound("coinsound.mp3");
     
     public void act()
     {
@@ -25,6 +25,24 @@ public class Car extends Actor
         {
             move(5);
         }
+        
+        // Remove coin
+        collect();
 
+    }
+    
+    /**
+    * Collect the coin and spawn new coin
+    */
+    public void collect()
+    {
+        // If elephant touching the apple remove it and spawn a new one
+        if(isTouching(Coin.class))
+        {
+            removeTouching(Coin.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createCoin();
+            coinSound.play();
+        }
     }
 }

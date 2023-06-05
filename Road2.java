@@ -1,36 +1,32 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The Coin we seek.
+ * Write a description of class Road2 here.
  * 
- * @author Jason Qian
- * @version June 2023
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class Coin extends Actor
+public class Road2 extends Actor
 {
     int speed = 2;
 
     /**
-     * Act - do whatever the Coin wants to do. This method is called whenever
+     * Act - do whatever the Road2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        // Coin falls downwards. 
         int x = getX();
         int y = getY() + speed;
         setLocation(x, y);
-        
-        // Remove coin and draw game over when coin gets to bottom
-        MyWorld world = (MyWorld) getWorld();
         if (isTouching(Barrier.class))
         {
-            setLocation(x, 0);
+            setLocation(300, 0);
         }
     }
 
     /**
-     * Speed of the coin
+     * Speed of the road
      *
      */
     public void setSpeed(int spd)
@@ -38,3 +34,4 @@ public class Coin extends Actor
         speed = spd;
     }
 }
+

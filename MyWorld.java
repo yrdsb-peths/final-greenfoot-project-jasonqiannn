@@ -19,7 +19,11 @@ public class MyWorld extends World
 
         // Create the road
         createRoad();
-        
+        createRoad2();
+        createRoad3();
+        createRoad4();
+        createBarrier();
+
         // Create the car object
         Car car = new Car();
         addObject (car, 300, 350);  
@@ -48,11 +52,47 @@ public class MyWorld extends World
         addObject(coin, x, y);
     }
 
+    /**
+     * Create the road
+     */
     public void createRoad()
+    {
+        Road road = new Road();
+        int x = 300;
+        int y = 0;
+        addObject(road, x, y);
+    }
+
+    public void createRoad2()
+    {
+        Road road = new Road();
+        int x = 300;
+        int y = 100;
+        addObject(road, x, y);
+    }
+
+    public void createRoad3()
     {
         Road road = new Road();
         int x = 300;
         int y = 200;
         addObject(road, x, y);
     }
+
+    public void createRoad4()
+    {
+        Road road = new Road();
+        int x = 300;
+        int y = 300;
+        addObject(road, x, y);
+    }
+
+    public void createBarrier()
+    {
+        Barrier barrier = new Barrier();
+        int x = 300;
+        int y = 400;
+        addObject(barrier, x, y);
+    }
+    
 }
