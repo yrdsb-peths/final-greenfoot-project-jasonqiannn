@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Coin extends Actor
 {
-    int speed = 2;
+    int speed = 3;
 
     /**
      * Act - do whatever the Coin wants to do. This method is called whenever
@@ -21,7 +21,7 @@ public class Coin extends Actor
         int y = getY() + speed;
         setLocation(x, y);
         
-        // Remove coin and draw game over when coin gets to bottom
+        // Respawn the coin if it is touching the barrier
         MyWorld world = (MyWorld) getWorld();
         if (isTouching(Barrier.class))
         {

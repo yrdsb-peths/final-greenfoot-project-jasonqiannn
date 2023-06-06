@@ -42,6 +42,7 @@ public class Car extends Actor
             removeTouching(Coin.class);
             MyWorld world = (MyWorld) getWorld();
             world.createCoin();
+            world.increaseScore();
             coinSound.play();
         }
     }

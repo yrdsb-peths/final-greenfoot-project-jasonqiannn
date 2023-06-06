@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Road extends Actor
 {
-    int speed = 2;
+    int speed = 3;
 
     /**
      * Act - do whatever the Road wants to do. This method is called whenever

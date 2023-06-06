@@ -8,6 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    public int score = 0;
+    Label scoreLabel;
+    int level = 1;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -15,7 +19,7 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);
+        super(600, 600, 1);
 
         // Create the road
         createRoad();
@@ -23,7 +27,11 @@ public class MyWorld extends World
         createRoad3();
         createRoad4();
         createBarrier();
-
+        
+        //Create a label
+        scoreLabel = new Label(0, 80);
+        addObject(scoreLabel, 50, 50);
+        
         // Create the car object
         Car car = new Car();
         addObject (car, 300, 350);  
@@ -40,7 +48,21 @@ public class MyWorld extends World
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200);
     }
-
+    
+    /**
+     * Increase score
+     */
+    public void increaseScore()
+    {
+        score++;
+        scoreLabel.setValue(score);
+        
+        // Every 10 points the speed of the apple increases by 1
+        if(score % 10 == 0)
+        {
+            level += 1;
+        }
+    }
     /**
      * Create a new coin at random location at top of screen
      */
