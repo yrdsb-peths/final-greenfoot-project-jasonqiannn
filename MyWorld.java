@@ -9,8 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     public int score = 0;
-    Label scoreLabel;
     int level = 1;
+    Label scoreLabel;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -36,8 +36,9 @@ public class MyWorld extends World
         Car car = new Car();
         addObject (car, 300, 350);  
         
-        // Draw coin to screen
+        // Draw coin and pedestrian to screen
         createCoin();
+        createPedestrian();
     }
     
     /**
@@ -62,16 +63,6 @@ public class MyWorld extends World
         {
             level += 1;
         }
-    }
-    /**
-     * Create a new coin at random location at top of screen
-     */
-    public void createCoin()
-    {
-        Coin coin = new Coin();
-        int x = Greenfoot.getRandomNumber(getWidth());
-        int y = 0;
-        addObject(coin, x, y);
     }
 
     /**
@@ -117,4 +108,28 @@ public class MyWorld extends World
         addObject(barrier, x, y);
     }
     
+    /**
+     * Create a new coin at random location at top of screen
+     */
+    public void createCoin()
+    {
+        Coin coin = new Coin();
+        int x = Greenfoot.getRandomNumber(getWidth());
+        int y = 0;
+        addObject(coin, x, y);
+    }
+    
+    /**
+     * Create a new pedestrian at random location at top of screen
+     */
+    public void createPedestrian()
+    {
+        Pedestrian pedestrian = new Pedestrian();
+        int x = Greenfoot.getRandomNumber(getWidth());
+        int y = 0;
+        if(score % 10 == 0)
+        {
+            addObject(pedestrian, x, y);
+        }
+    }
 }

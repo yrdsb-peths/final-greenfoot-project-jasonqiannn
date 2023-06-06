@@ -28,7 +28,9 @@ public class Car extends Actor
         
         // Remove coin
         collect();
-
+        
+        // End game if collision
+        hit();
     }
     
     /**
@@ -36,7 +38,7 @@ public class Car extends Actor
     */
     public void collect()
     {
-        // If elephant touching the apple remove it and spawn a new one
+        // If car touching the coin remove it and spawn a new one
         if(isTouching(Coin.class))
         {
             removeTouching(Coin.class);
@@ -44,6 +46,20 @@ public class Car extends Actor
             world.createCoin();
             world.increaseScore();
             coinSound.play();
+        }
+    }
+    
+    /**
+     * Hit pedestrian or debris end game
+     */
+    public void hit()
+    {
+        // If car is touching pedestrian end the game
+        if(isTouching(Pedestrian.class))
+        {
+            MyWorld world = (MyWorld) getWorld();
+            world.gameOver();
+            world.removeObject(this);
         }
     }
 }
