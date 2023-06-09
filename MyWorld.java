@@ -26,6 +26,8 @@ public class MyWorld extends World
         createRoad2();
         createRoad3();
         createRoad4();
+        createRoad5();
+        createRoad6();
         createBarrier();
         
         //Create a label
@@ -100,11 +102,27 @@ public class MyWorld extends World
         addObject(road, x, y);
     }
 
+    public void createRoad5()
+    {
+        Road road = new Road();
+        int x = 300;
+        int y = 400;
+        addObject(road, x, y);
+    }
+
+    public void createRoad6()
+    {
+        Road road = new Road();
+        int x = 300;
+        int y = 500;
+        addObject(road, x, y);
+    }
+
     public void createBarrier()
     {
         Barrier barrier = new Barrier();
         int x = 300;
-        int y = 400;
+        int y = 600;
         addObject(barrier, x, y);
     }
     
