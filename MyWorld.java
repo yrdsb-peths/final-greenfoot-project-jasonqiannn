@@ -55,14 +55,14 @@ public class MyWorld extends World
     }
     
     /**
-     * Increase score
+     * Increase score and every 5 points increase speed by 1
      */
     public void increaseScore()
     {
         score++;
         scoreLabel.setValue(score);
         
-        if(score % 10 == 0)
+        if(score % 5 == 0)
         {
             level += 1;
         }
@@ -74,6 +74,7 @@ public class MyWorld extends World
     public void createRoad()
     {
         Road road = new Road();
+        road.setSpeed(level);
         int x = 300;
         int y = 0;
         addObject(road, x, y);
@@ -82,6 +83,7 @@ public class MyWorld extends World
     public void createRoad2()
     {
         Road road = new Road();
+        road.setSpeed(level);
         int x = 300;
         int y = 100;
         addObject(road, x, y);
@@ -90,6 +92,7 @@ public class MyWorld extends World
     public void createRoad3()
     {
         Road road = new Road();
+        road.setSpeed(level);
         int x = 300;
         int y = 200;
         addObject(road, x, y);
@@ -98,6 +101,7 @@ public class MyWorld extends World
     public void createRoad4()
     {
         Road road = new Road();
+        road.setSpeed(level);
         int x = 300;
         int y = 300;
         addObject(road, x, y);
@@ -106,6 +110,7 @@ public class MyWorld extends World
     public void createRoad5()
     {
         Road road = new Road();
+        road.setSpeed(level);
         int x = 300;
         int y = 400;
         addObject(road, x, y);
@@ -114,6 +119,7 @@ public class MyWorld extends World
     public void createRoad6()
     {
         Road road = new Road();
+        road.setSpeed(level);
         int x = 300;
         int y = 500;
         addObject(road, x, y);

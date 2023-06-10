@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Coin extends Actor
 {
-    int speed = 0;
+    int speed = 1;
 
     /**
      * Act - do whatever the Coin wants to do. This method is called whenever
