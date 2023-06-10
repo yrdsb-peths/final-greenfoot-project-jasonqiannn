@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Pedestrian extends Actor
 {
-    int speed = 3;
+    int speed = 0;
 
     /**
      * Act - do whatever the Pedestrian wants to do. This method is called whenever
@@ -20,11 +20,22 @@ public class Pedestrian extends Actor
         int y = getY() + speed;
         setLocation(x, y);
         
-        // Remove pedestrian if touching barrier
+        // Respawn pedestrian if touching barrier
         MyWorld world = (MyWorld) getWorld();
         if (isTouching(Barrier.class))
         {
             world.removeObject(this);
+            world.createPedestrian();
         }
     }
+    
+    /**
+     * Speed of the pedestrian
+     *
+     */
+    public void setSpeed(int spd)
+    {
+        speed = spd;
+    }
 }
+

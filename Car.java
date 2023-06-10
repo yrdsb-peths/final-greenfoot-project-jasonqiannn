@@ -19,11 +19,11 @@ public class Car extends Actor
         // Left key move left right key move right at a value of 5
         if(Greenfoot.isKeyDown("left"))
         {
-            move(-5);
+            move(-7);
         }
         else if(Greenfoot.isKeyDown("right"))
         {
-            move(5);
+            move(7);
         }
         
         // Remove coin
@@ -57,9 +57,18 @@ public class Car extends Actor
         // If car is touching pedestrian end the game
         if(isTouching(Pedestrian.class))
         {
+            removeTouching(Pedestrian.class);
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
-            world.removeObject(this);
         }
+        
+        // If car is touching debris end the game
+        if(isTouching(Debris.class))
+        {
+            removeTouching(Debris.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.gameOver();
+        }
+        
     }
 }

@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     public int score = 0;
-    int level = 1;
+    int level = 5;
     Label scoreLabel;
     
     /**
@@ -36,11 +36,12 @@ public class MyWorld extends World
         
         // Create the car object
         Car car = new Car();
-        addObject (car, 300, 350);  
+        addObject (car, 300, 450);  
         
         // Draw coin and pedestrian to screen
         createCoin();
         createPedestrian();
+        createDebris();
     }
     
     /**
@@ -50,6 +51,7 @@ public class MyWorld extends World
     {
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200);
+        level = 0;
     }
     
     /**
@@ -60,7 +62,6 @@ public class MyWorld extends World
         score++;
         scoreLabel.setValue(score);
         
-        // Every 10 points the speed of the apple increases by 1
         if(score % 10 == 0)
         {
             level += 1;
@@ -132,6 +133,7 @@ public class MyWorld extends World
     public void createCoin()
     {
         Coin coin = new Coin();
+        coin.setSpeed(level);
         int x = Greenfoot.getRandomNumber(getWidth());
         int y = 0;
         addObject(coin, x, y);
@@ -143,11 +145,21 @@ public class MyWorld extends World
     public void createPedestrian()
     {
         Pedestrian pedestrian = new Pedestrian();
+        pedestrian.setSpeed(level);
         int x = Greenfoot.getRandomNumber(getWidth());
         int y = 0;
-        if(score % 10 == 0)
-        {
-            addObject(pedestrian, x, y);
-        }
+        addObject(pedestrian, x, y);
+    }
+    
+    /**
+     * Create a debris at random location at top of screen
+     */
+    public void createDebris()
+    {
+        Debris debris = new Debris();
+        debris.setSpeed(level);
+        int x = Greenfoot.getRandomNumber(getWidth());
+        int y = 0;
+        addObject(debris, x, y);
     }
 }
