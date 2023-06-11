@@ -13,6 +13,10 @@ public class Car extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootSound coinSound = new GreenfootSound("coinsound.mp3");
+    GreenfootSound splatSound = new GreenfootSound("splat.mp3");
+    GreenfootSound crashSound = new GreenfootSound("carcrash.mp3");
+    GreenfootImage carBlood = new GreenfootImage("aristoblood.png");
+    GreenfootImage carCrash = new GreenfootImage("aristocrash.png");
     
     public void act()
     {
@@ -58,16 +62,20 @@ public class Car extends Actor
         if(isTouching(Pedestrian.class))
         {
             removeTouching(Pedestrian.class);
+            setImage(carBlood);
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
+            splatSound.play();
         }
         
         // If car is touching debris end the game
         if(isTouching(Debris.class))
         {
             removeTouching(Debris.class);
+            setImage(carCrash);
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
+            crashSound.play();
         }
         
     }
