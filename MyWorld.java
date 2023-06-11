@@ -36,7 +36,7 @@ public class MyWorld extends World
         
         // Create the car object
         Car car = new Car();
-        addObject (car, 300, 450);  
+        addObject (car, 300, 500);  
         
         // Draw coin and pedestrian to screen
         createCoin();
