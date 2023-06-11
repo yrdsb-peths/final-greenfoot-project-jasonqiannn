@@ -17,17 +17,27 @@ public class Car extends Actor
     GreenfootSound crashSound = new GreenfootSound("carcrash.mp3");
     GreenfootImage carBlood = new GreenfootImage("aristoblood.png");
     GreenfootImage carCrash = new GreenfootImage("aristocrash.png");
+    GreenfootImage car = new GreenfootImage("aristo.png");
+    GreenfootImage carLeft = new GreenfootImage("aristoleft.png");
+    GreenfootImage carRight = new GreenfootImage("aristoright.png");
     
     public void act()
     {
         // Left key move left right key move right at a value of 5
+        if(Greenfoot.isKeyDown("up"))
+        {
+            setImage(car);
+        }
+
         if(Greenfoot.isKeyDown("left"))
         {
             move(-7);
+            setImage(carLeft);
         }
         else if(Greenfoot.isKeyDown("right"))
         {
             move(7);
+            setImage(carRight);
         }
         
         // Remove coin
