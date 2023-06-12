@@ -51,8 +51,8 @@ public class TitleScreen extends World
         Label label4 = new Label("debris and pedestrians as you drive", 30);
         addObject(label4,235,130); 
         Car car = new Car();
-        addObject(car,35,50);
+        addObject(car,25,50);
         Car car2 = new Car();
-        addObject(car2,565,50);
+        addObject(car2,575,50);
     }
 }
