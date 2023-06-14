@@ -19,10 +19,17 @@ public class Road extends Actor
         int x = getX();
         int y = getY() + speed;
         setLocation(x, y);
+        
+        MyWorld world = (MyWorld) getWorld();
         if (isTouching(Barrier.class))
         {
-            setLocation(300, 0);
+            world.removeObject(this);
+            world.createRoad();
         }
+        //if (isTouching(Barrier.class))
+        //{
+        //    setLocation(300, 0);
+        //}
     }
 
     /**

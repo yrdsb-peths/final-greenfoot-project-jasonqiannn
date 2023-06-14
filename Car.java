@@ -17,27 +17,45 @@ public class Car extends Actor
     GreenfootSound crashSound = new GreenfootSound("carcrash.mp3");
     GreenfootImage carBlood = new GreenfootImage("aristoblood.png");
     GreenfootImage carCrash = new GreenfootImage("aristocrash.png");
-    GreenfootImage car = new GreenfootImage("aristo.png");
     GreenfootImage carLeft = new GreenfootImage("aristoleft.png");
-    GreenfootImage carRight = new GreenfootImage("aristoright.png");
+    GreenfootImage carRight = new GreenfootImage("aristoright.png");    
+    GreenfootImage[] car = new GreenfootImage[6];
+
+    public Car()
+    {
+        for(int i = 0; i < car.length; i++)
+        {
+            car[i] = new GreenfootImage("images/car_exhaust/exhaust" + i + ".png");
+        }
+        setImage(car[0]);
+    }
+    
+    /**
+     * Animate the exhaust
+     */
+    int imageIndex = 0;
+    public void animateExhaust()
+    {
+        setImage(car[imageIndex]);
+        imageIndex = (imageIndex + 1) % car.length;
+    }
     
     public void act()
     {
         // Left key move left right key move right at a value of 5
         if(Greenfoot.isKeyDown("up"))
         {
-            setImage(car);
         }
 
         if(Greenfoot.isKeyDown("left"))
         {
             move(-7);
-            setImage(carLeft);
+            //setImage(carLeft);
         }
         else if(Greenfoot.isKeyDown("right"))
         {
             move(7);
-            setImage(carRight);
+            //setImage(carRight);
         }
         
         // Remove coin
@@ -45,6 +63,9 @@ public class Car extends Actor
         
         // End game if collision
         hit();
+        
+        // Animate exhaust
+        animateExhaust();
     }
     
     /**
@@ -87,6 +108,5 @@ public class Car extends Actor
             world.gameOver();
             crashSound.play();
         }
-        
     }
 }

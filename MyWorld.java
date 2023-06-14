@@ -9,7 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     public int score = 0;
-    int level = 5;
+    int level = 4;
+    int speed = 4;
     Label scoreLabel;
     
     /**
@@ -82,47 +83,47 @@ public class MyWorld extends World
 
     public void createRoad2()
     {
-        Road road = new Road();
-        road.setSpeed(level);
+        Road road2 = new Road();
+        road2.setSpeed(level);
         int x = 300;
         int y = 100;
-        addObject(road, x, y);
+        addObject(road2, x, y);
     }
 
     public void createRoad3()
     {
-        Road road = new Road();
-        road.setSpeed(level);
+        Road road3 = new Road();
+        road3.setSpeed(level);
         int x = 300;
         int y = 200;
-        addObject(road, x, y);
+        addObject(road3, x, y);
     }
 
     public void createRoad4()
     {
-        Road road = new Road();
-        road.setSpeed(level);
+        Road road4 = new Road();
+        road4.setSpeed(level);
         int x = 300;
         int y = 300;
-        addObject(road, x, y);
+        addObject(road4, x, y);
     }
 
     public void createRoad5()
     {
-        Road road = new Road();
-        road.setSpeed(level);
+        Road road5 = new Road();
+        road5.setSpeed(level);
         int x = 300;
         int y = 400;
-        addObject(road, x, y);
+        addObject(road5, x, y);
     }
 
     public void createRoad6()
     {
-        Road road = new Road();
-        road.setSpeed(level);
+        Road road6 = new Road();
+        road6.setSpeed(level);
         int x = 300;
         int y = 500;
-        addObject(road, x, y);
+        addObject(road6, x, y);
     }
 
     public void createBarrier()

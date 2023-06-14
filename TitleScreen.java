@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TitleScreen extends World
 {
     Label titleLabel = new Label("ARISTO DRIVE", 80);
+    GreenfootSound carSound = new GreenfootSound("carsound.mp3");
 
     /**
      * Constructor for objects of class TitleScreen.
@@ -32,6 +33,7 @@ public class TitleScreen extends World
         {
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
+            carSound.play();
         }
     }
     
