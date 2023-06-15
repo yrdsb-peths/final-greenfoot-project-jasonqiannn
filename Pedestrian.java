@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Pedestrian extends Actor
 {
     int speed = 1;
+    GreenfootImage carBlood = new GreenfootImage("aristoblood.png");
 
     /**
      * Act - do whatever the Pedestrian wants to do. This method is called whenever
@@ -26,6 +27,11 @@ public class Pedestrian extends Actor
         {
             world.removeObject(this);
             world.createPedestrian();
+        }
+        // If level is back at 0, freeze the pedestrian
+        if (world.level == 0)
+        {
+            speed = 0;
         }
     }
     

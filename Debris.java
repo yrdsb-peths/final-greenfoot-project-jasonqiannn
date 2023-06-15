@@ -27,6 +27,11 @@ public class Debris extends Actor
             world.removeObject(this);
             world.createDebris();
         }
+        // If level is back at 0, freeze the debris
+        if (world.level == 0)
+        {
+            speed = 0;
+        }
     }
     
     /**

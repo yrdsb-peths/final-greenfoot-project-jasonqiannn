@@ -14,15 +14,12 @@ public class Car extends Actor
      */
     GreenfootSound coinSound = new GreenfootSound("coinsound.mp3");
     GreenfootSound splatSound = new GreenfootSound("splat.mp3");
-    GreenfootSound crashSound = new GreenfootSound("carcrash.mp3");
-    GreenfootImage carBlood = new GreenfootImage("aristoblood.png");
-    GreenfootImage carCrash = new GreenfootImage("aristocrash.png");
-    GreenfootImage carLeft = new GreenfootImage("aristoleft.png");
-    GreenfootImage carRight = new GreenfootImage("aristoright.png");    
+    GreenfootSound crashSound = new GreenfootSound("carcrash.mp3");  
     GreenfootImage[] car = new GreenfootImage[6];
 
     public Car()
     {
+        // Array used for animating car exhaust fumes
         for(int i = 0; i < car.length; i++)
         {
             car[i] = new GreenfootImage("images/car_exhaust/exhaust" + i + ".png");
@@ -42,20 +39,14 @@ public class Car extends Actor
     
     public void act()
     {
-        // Left key move left right key move right at a value of 5
-        if(Greenfoot.isKeyDown("up"))
-        {
-        }
-
+        // Left key move left right key move right at a value of 7
         if(Greenfoot.isKeyDown("left"))
         {
             move(-7);
-            //setImage(carLeft);
         }
         else if(Greenfoot.isKeyDown("right"))
         {
             move(7);
-            //setImage(carRight);
         }
         
         // Remove coin
@@ -93,17 +84,14 @@ public class Car extends Actor
         if(isTouching(Pedestrian.class))
         {
             removeTouching(Pedestrian.class);
-            setImage(carBlood);
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
             splatSound.play();
         }
-        
         // If car is touching debris end the game
         if(isTouching(Debris.class))
         {
             removeTouching(Debris.class);
-            setImage(carCrash);
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
             crashSound.play();

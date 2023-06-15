@@ -20,16 +20,17 @@ public class Road extends Actor
         int y = getY() + speed;
         setLocation(x, y);
         
-        MyWorld world = (MyWorld) getWorld();
+        // If road line is touching the barrier, replace it at the top of the screen
         if (isTouching(Barrier.class))
         {
-            world.removeObject(this);
-            world.createRoad();
+            setLocation(300, 0);
         }
-        //if (isTouching(Barrier.class))
-        //{
-        //    setLocation(300, 0);
-        //}
+        // If level is back at 0, freeze the roadlines
+        MyWorld world = (MyWorld) getWorld();
+        if (world.level == 0)
+        {
+            speed = 0;
+        }
     }
 
     /**

@@ -27,6 +27,11 @@ public class Coin extends Actor
         {
             setLocation(x, 0);
         }
+        // If level is back at 0, freeze the coin
+        if (world.level == 0)
+        {
+            speed = 0;
+        }
     }
 
     /**
